@@ -126,8 +126,5 @@ func extractCSRFToken(t *testing.T, body string) string {
 		t.Fatal("no csrf token found in body")
 	}
 
-	token := html.UnescapeString(string(matches[1]))
-	t.Logf("CSRF Token: %q", token)
-
-	return token
+	return html.UnescapeString(string(matches[1]))
 }

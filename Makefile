@@ -2,7 +2,10 @@ build:
 	go build -o bin/$(shell basename $(PWD)) cmd/web/main.go
 
 run:
-	go run cmd/main.go
+	go run ./cmd/web
+
+debug:
+	go run ./cmd/web -debug
 
 test:
 	go test -v ./...
